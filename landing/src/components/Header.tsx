@@ -61,7 +61,7 @@ export const Header = ({ onGetStarted }: HeaderProps) => {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <div className="flex items-center">
             <a href="/" className="text-xl font-semibold text-foreground">
-              Alter Habits
+              alterhabits
             </a>
           </div>
           

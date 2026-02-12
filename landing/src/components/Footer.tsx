@@ -32,13 +32,8 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-sm text-muted transition-colors hover:text-foreground">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/support" className="text-sm text-muted transition-colors hover:text-foreground">
-                  Support
+                <a href="mailto:support@alterhabits.com" className="text-sm text-muted transition-colors hover:text-foreground">
+                  Contact Support
                 </a>
               </li>
             </ul>
@@ -82,7 +77,7 @@ export const Footer = () => {
         {/* Copyright and Social Media */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-stone-200 pt-8 md:flex-row">
           <p className="text-sm text-muted">
-            Copyright © {currentYear} Alter Habits. All rights reserved.
+            Copyright © {currentYear} alterhabits. All rights reserved.
           </p>
           
           <div className="flex gap-4">

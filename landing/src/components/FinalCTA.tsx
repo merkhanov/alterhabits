@@ -61,7 +61,7 @@ export const FinalCTA = ({ onGetStarted }: FinalCTAProps) => {
               How much does it cost?
             </h3>
             <p className="text-muted">
-              We offer a free plan to get started, a Pro plan at $19/month for unlimited access, and a Lifetime plan at $199 for one-time payment. All plans include our AI coach and habit tracking features.
+              We offer a free plan to get started, a Pro plan at $8/month for unlimited access, and a Pro+ plan at $19/month with priority support and advanced features. All plans include our AI coach and habit tracking features.
             </p>
           </div>
         </div>
