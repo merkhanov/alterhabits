@@ -5,9 +5,10 @@ import { gsap } from "gsap";
 
 interface HeaderProps {
   onGetStarted: () => void;
+  onSignIn: () => void;
 }
 
-export const Header = ({ onGetStarted }: HeaderProps) => {
+export const Header = ({ onGetStarted, onSignIn }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<HTMLDivElement>(null);
@@ -82,6 +83,12 @@ export const Header = ({ onGetStarted }: HeaderProps) => {
           
           <div className="flex items-center gap-4">
             <button
+              onClick={onSignIn}
+              className="hidden text-sm font-medium text-foreground transition-colors hover:text-accent md:block"
+            >
+              Sign in
+            </button>
+            <button
               onClick={onGetStarted}
               className="hidden rounded-full bg-accent px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-accent/90 md:block"
             >
@@ -132,9 +139,18 @@ export const Header = ({ onGetStarted }: HeaderProps) => {
           <button
             onClick={() => {
               handleCloseMenu();
+              onSignIn();
+            }}
+            className="mt-4 w-full rounded-full border border-stone-200 px-6 py-3 text-base font-medium text-foreground transition-colors hover:bg-stone-50"
+          >
+            Sign in
+          </button>
+          <button
+            onClick={() => {
+              handleCloseMenu();
               onGetStarted();
             }}
-            className="mt-4 w-full rounded-full bg-accent px-6 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+            className="w-full rounded-full bg-accent px-6 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
           >
             Get started
           </button>

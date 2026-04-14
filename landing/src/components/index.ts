@@ -6,3 +6,4 @@ export { WhoItsFor } from "./WhoItsFor";
 export { Trust } from "./Trust";
 export { FinalCTA } from "./FinalCTA";
 export { Footer } from "./Footer";
+export { AuthModal } from "./AuthModal";

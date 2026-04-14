@@ -1,20 +1,46 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+const Prism = dynamic(
+  () => import("@/components/Prism").then((mod) => mod.Prism),
+  { ssr: false }
+);
+
 interface HeroProps {
   onGetStarted: () => void;
 }
 
 export const Hero = ({ onGetStarted }: HeroProps) => {
   return (
-    <section className="px-6 py-40 md:py-56">
-      <div className="mx-auto max-w-4xl">
+    <section className="relative overflow-hidden px-6 py-40 md:py-56">
+      <div className="absolute inset-0 opacity-40">
+        <Prism
+          animationType="rotate"
+          timeScale={1}
+          height={3.5}
+          baseWidth={5.5}
+          scale={3.6}
+          hueShift={1.8}
+          colorFrequency={1}
+          noise={0.5}
+          glow={1}
+          bloom={1}
+          suspendWhenOffscreen
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-4xl">
         <div className="space-y-8 text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Your personal AI coach for breaking habits
           </h1>
-          
+
           <p className="mx-auto max-w-2xl text-lg text-muted md:text-xl">
-            Get support when you need it most. No judgment, no pressure. Just personalized guidance that adapts to you.
+            Get support when you need it most. No judgment, no pressure. Just
+            personalized guidance that adapts to you.
           </p>
-          
+
           <div className="flex flex-col items-center gap-4 pt-4">
             <button
               onClick={onGetStarted}
@@ -22,7 +48,7 @@ export const Hero = ({ onGetStarted }: HeroProps) => {
             >
               Get started
             </button>
-            
+
             <p className="text-sm text-muted">
               Join people who are making real progress
             </p>
