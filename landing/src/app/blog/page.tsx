@@ -1,11 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AuthModal } from "@/components/AuthModal";
 
 export default function BlogPage() {
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [authDefaultSignUp, setAuthDefaultSignUp] = useState(true);
+
   const handleGetStarted = () => {
-    console.log("Get started clicked");
+    setAuthDefaultSignUp(true);
+    setIsAuthOpen(true);
+  };
+
+  const handleSignIn = () => {
+    setAuthDefaultSignUp(false);
+    setIsAuthOpen(true);
   };
 
   const blogPosts = [
@@ -61,7 +72,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen">
-      <Header onGetStarted={handleGetStarted} />
+      <Header onGetStarted={handleGetStarted} onSignIn={handleSignIn} />
       <main className="pt-16">
         <section className="px-6 py-20 md:py-32">
           <div className="mx-auto max-w-6xl">
@@ -128,6 +139,7 @@ export default function BlogPage() {
         </section>
       </main>
       <Footer />
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} defaultSignUp={authDefaultSignUp} />
     </div>
   );
 }
